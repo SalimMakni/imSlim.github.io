@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/page.css">
+    <title>Formulaire d'Envoi d'Email</title>
+</head>
+<body id="bo">
+
+    <form id="form">
+        <label for="destinataire"id="label1">FullName</label>
+        <input type="email" id="destinataire" name="destinataire" required id="input1">
+        <br>
+
+        <label for="sujet"id="label2">CIN</label>
+        <input type="text" id="sujet" name="sujet" required id="input1">
+        <br>
+
+        <label for="message"id="label3">Phone</label>
+        <input type="text" id="sujet" name="sujet" required id="input1">
+        <br>
+        <label for="destinataire"id="label1">Gender</label>
+        <input type="email" id="destinataire" name="destinataire" required id="input1">
+        <br>
+
+        <label for="sujet"id="label2">mail</label>
+        <input type="text" id="sujet" name="sujet" required id="input1">
+        <br>
+
+        <label for="message"id="label3">Subject</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        <a href="#" onclick="envoyerEmail()"id="a">Envoyer</a>
+    </form>
+
+    <script>
+        function envoyerEmail() {
+            var destinataire = document.getElementById("destinataire").value;
+            var sujet = document.getElementById("sujet").value;
+            var message = document.getElementById("message").value;
+
+            var mailtoLink = "mailto:" + destinataire + "?subject=" + encodeURIComponent(sujet) + "&body=" + encodeURIComponent(message);
+            
+            // Ouvre le client de messagerie par défaut de l'utilisateur
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+</body>
+</html>

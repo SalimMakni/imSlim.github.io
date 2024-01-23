@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../CSS/page.css">
+        </head>
+            <title>Quiz Noté</title>
+            <style>
+                /* Ajoutez des styles selon vos préférences */
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                }
+        
+                .question {
+                    margin-bottom: 10px;
+                }
+        
+                #result {
+                    margin-top: 20px;
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
+        
+            <h1>Quiz Noté</h1>
+        
+            <form id="quizForm">
+                
+        
+                <div class="question">
+                    <label>1. Quelle est la capitale de la France?</label><br>
+                    <select name="q1"required>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="paris">Paris</option><br>
+                        <option value="londres">Londres</option><br>
+                        <option value="berlin">Berlin</option><br>
+                    </select>
+                </div>
+        
+                <div class="question">
+                    <label>2. Quelle est la capitale du Japon?</label><br>
+                    <select name="q2"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Pékin</option><br>
+                        <option value="tokyo">Tokyo</option><br>
+                        <option value="seoul">Séoul</option><br>
+                    </select>
+                </div>
+        
+                <div class="question">
+                    <label>3. Quelle est la capitale de la France?</label><br>
+                    <select name="q3"required><br>
+                    <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Paris</option><br>
+                        <option value="tokyo">Marseille</option><br>
+                        <option value="seoul">Nante</option><br>
+                    </select>
+                </div>
+                <div class="question">
+                    <label>4. Quelle est la capitale de l'Italie?</label><br>
+                    <select name="q4"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Rome</option><br>
+                        <option value="tokyo">Napoli</option><br>
+                        <option value="seoul">Genoa</option><br>
+                    </select>
+                </div>
+                <div class="question">
+                    <label>5. Quelle est la capitale de l'Allemagne?</label><br>
+                    <select name="q5"required>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Berlin</option><br>
+                        <option value="tokyo">Munchen</option><br>
+                        <option value="seoul">Koln</option><br>
+                    </select>
+                </div>
+                <div class="question">
+                    <label>6. Quelle est la capitale de laTurkie?</label><br>
+                    <select name="q6"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Ankara</option><br>
+                        <option value="tokyo">Istanbul</option><br>
+                        
+                    </select>
+                </div>
+                <div class="question">
+                    <label>7. Quelle est la capitale du l'Espagne?</label><br>
+                    <select name="q7"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option>
+                        <option value="pekin">Barcelone</option><br>
+                        <option value="tokyo">Osasuna</option><br>
+                        <option value="seoul">Madrid</option><br>
+                    </select>
+                </div>
+                <div class="question">
+                    <label>8. Quelle est la capitale des Etats unis?</label><br>
+                    <select name="q8"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option>
+                        <option value="pekin">Washington</option><br>
+                        <option value="tokyo">Philadelphia</option><br>
+                        <option value="seoul">New York</option><br>
+                    </select>
+                </div>
+                <div class="question">
+                    <label>9. Quelle est la capitale du Cameroun?</label><br>
+                    <select name="q9"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Garoua</option><br>
+                        <option value="tokyo">Yaoundé</option><br>
+                        <option value="seoul">Kanakri</option><br>
+                    </select>
+                <div class="question">
+                    <label>10. Quelle est la capitale de l'Afrique du Sud ?</label><br>
+                    <select name="q10"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Johannesburg</option><br>
+                        <option value="tokyo">Pritoria</option><br>
+                        <option value="seoul">Gaborone</option><br>
+                    </select>
+                </div>
+                <div class="question">
+                    <label>3. Quelle est la capitale du Pays Bas?</label><br>
+                    <select name="q11"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Athéne</option><br>
+                        <option value="tokyo">Amesterdam</option><br>
+                        <option value="seoul">Stokholm</option><br>
+                    </select>
+                </div>
+                <div class="question">
+                    <label>3. Quelle est la capitale de l'Egypte'?</label><br>
+                    <select name="q12"required><br>
+                        <option value="" disabled selected>Sélectionnez une réponse</option><br>
+                        <option value="pekin">Ismailiya</option><br>
+                        <option value="tokyo">Tripoli</option><br>
+                        <option value="seoul">Cairo</option><br>
+                    </select>
+                </div>
+                
+        
+                <button type="button" onclick="calculateScore()" id="btn">Soumettre</button>
+            </form>
+        
+            <div id="result"></div>
+        
+            <script>
+                function calculateScore() {
+                    // Définissez les réponses correctes
+                    const correctAnswers = {
+                        q1: 'paris',
+                        q2: 'tokyo',
+                        q3: 'bleu',
+                        q4:'Rome',
+                        q5:'Belin',
+                        q6:'Ankara',
+                        q7:'Madrid',
+                        q8:'New York',
+                        q9:'Yaoundé',
+                        q10:'Pritoria',
+                        q11:'Amesterdam',
+                        q12:'Cairo'
+                    };
+        
+                    // Initialisez la note
+                    let score = 0;
+        
+                    // Parcourez chaque question
+                    for (const question in correctAnswers) {
+                        // Récupérez la réponse de l'utilisateur
+                        const userAnswer = document.querySelector(`[name="${question}"]`);
+        
+                        // Vérifiez si la réponse est correcte
+                        if (userAnswer && userAnswer.value.toLowerCase() === correctAnswers[question]) {
+                            score++;
+                        }
+                    }
+        
+                    // Affichez le résultat
+                    const resultElement = document.getElementById('result');
+                    resultElement.innerHTML = `Votre note est : ${score} / ${Object.keys(correctAnswers).length}`;
+                
+                 // Affichez les réponses correctes
+            const correctAnswersElement = document.getElementById('correctAnswers');
+            correctAnswersElement.innerHTML = '<h2>Réponses correctes :</h2>';
+            for (const question in correctAnswers) {
+                correctAnswersElement.innerHTML += `<p>${question}: ${correctAnswers[question]}</p>`;
+            }
+        }
+            
+            </script>
+        
+        </body>
+        </html>
+        
+   
